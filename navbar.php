@@ -1,36 +1,28 @@
 <!-- Barre de navigation -->
+
+<!-- Barre de navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="index.php">HOLOCRON</a>
+        <a class="navbar-brand" href="index.php">Peinture Sudog</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
         <!-- Côté droit de la barre de navigation avec les différents onglets -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <!-- Onglet univers Star Wars -->
+                <!-- Onglet oeuvres -->
                 <li class="nav-item">
                     <div class="dropdown">
-                        <a class="nav-link drop">L'univers</a>
-                            <div class="dropdown-content">
-                                <a href="personnages.php">Les personnages</a>
-                                <a href="planetes.php">Les planètes</a>
-                                <a href="affiliations.php">Les affiliations</a>
-                                <a href="especes.php">Les espèces</a>
-                            </div>
+                        <a class="nav-link drop">Nos oeuvres </a>
+                        <div class="dropdown-content">
+                            <a href="personnages.php">Nos peintures à l'huile</a>
+                            <a href="planetes.php"> Nos fresques</a>
+                            <a href="affiliations.php">Nos peintures murales</a>
+                            <a href="especes.php">Nos peintures sur bois</a>
+                        </div>
                     </div>
                 </li>
-                <!-- Onglet oeuvres Star Wars -->
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <a class="nav-link drop">Les oeuvres Star Wars</a>
-                            <div class="dropdown-content">
-                                <a href="films.php">Les films</a>
-                                <a href="series.php">Les séries</a>
-                                <a href="jeux.php">Les jeux vidéos</a>
-                            </div>
-                    </div>
-                </li>
+
                 <!-- Onglet forum -->
                 <li class="nav-item">
                     <div class="dropdown">
@@ -42,39 +34,22 @@
                         else{
                             $redirection_forum = "connexion.php?Erreur=1";
                         }
-                        echo '<a class="nav-link drop" href="'.$redirection_forum.'">Forum</a>'
+                        echo '<a class="nav-link drop" href="'.$redirection_forum.'">Nous contacter</a>'
                         ?>
                     </div>
                 </li>
                 <!-- Onglet boutique -->
                 <li class="nav-item">
                     <div class="dropdown">
-                         <?php
-                            $redirection_shop = "";
-                            if($_SESSION['login'] != ''){
-                                $redirection_shop = "contrebandier.php";
-                            }
-                            else{
-                                $redirection_shop = "connexion.php?Erreur=1";
-                            }
-                            echo '<a class="nav-link drop" href="'.$redirection_shop.'">Espace de contrebande</a>'
-                          ?>
-                    </div>
-                </li>
-
-                <!-- Onglet connexion -->
-                <li class="nav-item">
-                    <div class="dropdown">
                         <?php
-                            if($_SESSION['login'] != '')
-                            {
-                                echo '<a class="nav-link drop" href="">'.$_SESSION["login"].'</a>';
-                                echo '<div class="dropdown-content">';
-                                echo '<a href="deconnexion.php">Deconnexion</a>';
-                            }
-                            else{
-                                echo'<a class="nav-link drop" href="connexion.php">Connexion</a>';
-                            }
+                        $redirection_shop = "";
+                        if($_SESSION['login'] != ''){
+                            $redirection_shop = "contrebandier.php";
+                        }
+                        else{
+                            $redirection_shop = "connexion.php?Erreur=1";
+                        }
+                        echo '<a class="nav-link drop" href="'.$redirection_shop.'">Boutique</a>'
                         ?>
                     </div>
                 </li>
@@ -84,6 +59,23 @@
                         <button style="float: right;  cursor: pointer; margin-right: 16px;" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </li>
+                <!-- Onglet connexion -->
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <?php
+                        if($_SESSION['login'] != '')
+                        {
+                            echo '<a class="nav-link drop" href="">'.$_SESSION["login"].'</a>';
+                            echo '<div class="dropdown-content">';
+                            echo '<a href="deconnexion.php">Deconnexion</a>';
+                        }
+                        else{
+                            echo'<a class="nav-link drop" href="connexion.php">Connexion</a>';
+                        }
+                        ?>
+                    </div>
+                </li>
+
             </ul>
         </div>
     </div>
