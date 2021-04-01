@@ -28,10 +28,14 @@
                     <div class="dropdown">
                         <?php
                         $redirection_forum = "";
-                        if($_SESSION['login'] != ''){
-                            $redirection_forum = "forum.php";
+                        if(isset($_SESSION)) {
+                            if ($_SESSION['login'] != '') {
+                                $redirection_forum = "forum.php";
+                            } else {
+                                $redirection_forum = "connexion.php?Erreur=1";
+                            }
                         }
-                        else{
+                        else {
                             $redirection_forum = "connexion.php?Erreur=1";
                         }
                         echo '<a class="nav-link drop" href="'.$redirection_forum.'">Nous contacter</a>'
@@ -43,13 +47,18 @@
                     <div class="dropdown">
                         <?php
                         $redirection_shop = "";
-                        if($_SESSION['login'] != ''){
-                            $redirection_shop = "contrebandier.php";
+                        if(isset($_SESSION)) {
+                            if ($_SESSION['login'] != '') {
+                                $redirection_shop = "contrebandier.php";
+                            } else {
+                                $redirection_shop = "connexion.php?Erreur=1";
+                            }
                         }
-                        else{
+                        else {
                             $redirection_shop = "connexion.php?Erreur=1";
                         }
-                        echo '<a class="nav-link drop" href="'.$redirection_shop.'">Boutique</a>'
+                        echo '<a class="nav-link drop" href="' . $redirection_shop . '">Boutique</a>'
+
                         ?>
                     </div>
                 </li>
@@ -63,14 +72,17 @@
                 <li class="nav-item">
                     <div class="dropdown">
                         <?php
-                        if($_SESSION['login'] != '')
-                        {
-                            echo '<a class="nav-link drop" href="">'.$_SESSION["login"].'</a>';
-                            echo '<div class="dropdown-content">';
-                            echo '<a href="deconnexion.php">Deconnexion</a>';
+                        if(isset($_SESSION)) {
+                            if ($_SESSION['login'] != '') {
+                                echo '<a class="nav-link drop" href="">' . $_SESSION["login"] . '</a>';
+                                echo '<div class="dropdown-content">';
+                                echo '<a href="deconnexion.php">Deconnexion</a>';
+                            } else {
+                                echo '<a class="nav-link drop" href="connexion.php">Connexion</a>';
+                            }
                         }
-                        else{
-                            echo'<a class="nav-link drop" href="connexion.php">Connexion</a>';
+                        else {
+                            echo '<a class="nav-link drop" href="connexion.php">Connexion</a>';
                         }
                         ?>
                     </div>
