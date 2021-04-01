@@ -28,7 +28,7 @@
                     <div class="dropdown">
                         <?php
                         $redirection_forum = "";
-                        if(isset($_SESSION)) {
+                        if(isset($_SESSION['login'])) {
                             if ($_SESSION['login'] != '') {
                                 $redirection_forum = "forum.php";
                             } else {
@@ -47,7 +47,7 @@
                     <div class="dropdown">
                         <?php
                         $redirection_shop = "";
-                        if(isset($_SESSION)) {
+                        if(isset($_SESSION['login'])) {
                             if ($_SESSION['login'] != '') {
                                 $redirection_shop = "contrebandier.php";
                             } else {
@@ -72,7 +72,7 @@
                 <li class="nav-item">
                     <div class="dropdown">
                         <?php
-                        if(isset($_SESSION)) {
+                        if(isset($_SESSION['login'])) {
                             if ($_SESSION['login'] != '') {
                                 echo '<a class="nav-link drop" href="">' . $_SESSION["login"] . '</a>';
                                 echo '<div class="dropdown-content">';
