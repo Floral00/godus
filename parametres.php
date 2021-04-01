@@ -1,6 +1,6 @@
 <?php
     $server = 'localhost';
-    $DB = 'holocron';
+    $DB = 'peinture_sudog';
     $username = 'root';
     $password = 'root';
 ?>

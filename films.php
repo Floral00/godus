@@ -3,7 +3,9 @@ include('database.php');
 include('session.php');
 include("debut.php");
 ?>
-
+<head>
+    <script></script>
+</head>
 <body>
 
 <!-- Barre de navigation -->
@@ -61,7 +63,13 @@ include("navbar.php");
 include("footer.php");
 ?>
 
+<script type="text/javascript">
+    $.document()
+
+
+</script>
 </body>
+
 
 </html>
 

@@ -36,7 +36,7 @@
                     <div class="dropdown">
                         <?php
                         $redirection_forum = "";
-                        if($Verif_Utilisateur == 1){
+                        if($_SESSION['login'] != ''){
                             $redirection_forum = "forum.php";
                         }
                         else{
@@ -51,7 +51,7 @@
                     <div class="dropdown">
                          <?php
                             $redirection_shop = "";
-                            if($Verif_Utilisateur == 1){
+                            if($_SESSION['login'] != ''){
                                 $redirection_shop = "contrebandier.php";
                             }
                             else{
@@ -66,9 +66,9 @@
                 <li class="nav-item">
                     <div class="dropdown">
                         <?php
-                            if($Verif_Utilisateur == 1)
+                            if($_SESSION['login'] != '')
                             {
-                                echo '<a class="nav-link drop" href="">'.$_SESSION["pseudo"].'</a>';
+                                echo '<a class="nav-link drop" href="">'.$_SESSION["login"].'</a>';
                                 echo '<div class="dropdown-content">';
                                 echo '<a href="deconnexion.php">Deconnexion</a>';
                             }
@@ -77,6 +77,12 @@
                             }
                         ?>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <form action="/recherche.php" class="form-inline">
+                        <input style="float: none;display: block; border-radius: 20px; height: 1.5em;" type="text" placeholder="Recherche.." name="search">
+                        <button style="float: right;  cursor: pointer; margin-right: 16px;" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
                 </li>
             </ul>
         </div>

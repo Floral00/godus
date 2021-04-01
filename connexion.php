@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("database.php");
 include("session.php");
 include("debut.php");
@@ -54,8 +55,8 @@ include("navbar.php");
                     <!-- Demande le pseudo de l'utilisateur -->
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
-                            <label>Pseudo</label>
-                            <input type="text" class="form-control" placeholder="Pseudo" name="pseudo" required data-validation-required-message="Please enter your name.">
+                            <label>Login</label>
+                            <input type="text" class="form-control" placeholder="Login" name="login" required data-validation-required-message="Please enter your login.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -63,7 +64,7 @@ include("navbar.php");
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls">
                             <label>Mot de passe</label>
-                            <input type="password" class="form-control" placeholder="Mot de passe" name="mdp" required data-validation-required-message="Please enter your name.">
+                            <input type="password" class="form-control" placeholder="Mot de passe" name="mdp" required data-validation-required-message="Please enter your password.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -83,21 +84,23 @@ include("navbar.php");
         if (isset($_POST['mdp']))
             $mdp = $_POST['mdp'];
         else $mdp = " ";
-        if (isset($_POST['pseudo']))
-            $pseudo = $_POST['pseudo'];
-        else $pseudo = " ";
+        if (isset($_POST['login']))
+            $login = $_POST['login'];
+        else $login = " ";
         $mdp = sha1($_POST['mdp']); #permet de chiffer le mdp dans la bdd
-        $res = $connect->query("SELECT COUNT(*) AS compteur FROM utilisateur WHERE pseudo='$pseudo'");
+        $res = $connect->query("SELECT COUNT(*) AS compteur FROM user WHERE login='$login'");
         $data = $res->fetch();
         $Compteur_Utilisateur = $data['compteur'];
 
         if ($Compteur_Utilisateur != 0) {
-            $res = $connect->query("SELECT COUNT(*) AS compteur FROM utilisateur WHERE pseudo='$pseudo' AND mdp ='$mdp'");
+            $res = $connect->query("SELECT COUNT(*) AS compteur FROM user WHERE login='$login' AND mdp ='$mdp'");
             $data = $res->fetch();
             $Verif_Utilisateur = $data['compteur'];
+
             if ($Verif_Utilisateur == 1) {
-                $_SESSION['pseudo'] = $pseudo;
+                $_SESSION['login'] = $login;
                 $_SESSION['mdp'] = $mdp;
+                var_dump($_SESSION);
                 echo "<script type='text/javascript'>document.location.replace('index.php');</script>";
             }
         }
