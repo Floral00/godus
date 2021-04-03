@@ -1,6 +1,6 @@
 <!-- Pied de page -->
 <hr>
-<footer>
+<footer class="fixed-bottom">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
@@ -24,7 +24,7 @@
                         </a>
                     </li>
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; Holocron 2020</p>
+                <p class="copyright text-muted">Copyright &copy; Peinture Sudog 2020</p>
             </div>
         </div>
     </div>

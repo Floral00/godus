@@ -21,8 +21,7 @@ include("navbar.php");
 ?>
 
     <!-- En-tête de la page -->
-    <header class="masthead" style="background-image: url('img/vador.jpg')">
-        <div class="overlay"></div>
+    <header class="masthead" style="height: 0px">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
@@ -37,10 +36,14 @@ include("navbar.php");
     <!-- Contenu principale -->
 
     <!-- Formulaire de connexion -->
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <section class="container-fluid align-middle" >
+        <div class="row justify-content-md-center">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="col-lg-5 col-md-5 mx-auto">
                 <?php
                 if($Erreur==1)
                 {
@@ -75,7 +78,9 @@ include("navbar.php");
                 </form>
             </div>
         </div>
-    </div>
+        </div>
+    </section>
+
 
     <!-- Requete connexion-->
 
@@ -100,7 +105,6 @@ include("navbar.php");
             if ($Verif_Utilisateur == 1) {
                 $_SESSION['login'] = $login;
                 $_SESSION['mdp'] = $mdp;
-                var_dump($_SESSION);
                 echo "<script type='text/javascript'>document.location.replace('index.php');</script>";
             }
         }
