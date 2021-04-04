@@ -12,26 +12,17 @@
 
     <!-- Bootstrap CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Mon CSS -->
-    <link href="vendor/bootstrap/css/index.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="vendor/glyphicons-only-bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/bootstrap-table/dist/bootstrap-table.min.css">
     <!-- Custom styles for this template -->
-    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link rel="icon" href="img/home-bg.jpg" />
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendor/bootstrap-table/dist/bootstrap-table.min.js"></script>
-    <!-- Custom scripts for this template -->
-    <script src="js/clean-blog.min.js"></script>
-    <style>
-        body {
-            margin-top: 50px;
-        }
-    </style>
+
 </head>
 
 
