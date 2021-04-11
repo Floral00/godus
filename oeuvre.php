@@ -23,6 +23,9 @@ function get_oeuvre($DATABASE) {
 if(isset($_POST['action'])){
     $action = filter_input(INPUT_POST, "action", FILTER_SANITIZE_STRING);
     $DATABASE = mysqli_connect('localhost', 'root', 'root', 'peinture_sudog');
+    $DATABASE->query("SET NAMES 'utf8'");
+    $DATABASE->query("SET CHARACTER SET utf8");
+    $DATABASE->query("SET SESSION collation_connection = 'utf8_unicode_ci'");
     switch($action) {
         case 'get_oeuvre':
             $allowed = array();
