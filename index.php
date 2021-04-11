@@ -24,8 +24,8 @@ include("navbar.php");
     </div>
     <div class="row">
         <div class="col-md-3 col-xs-3"></div>
-        <div class="col-md-6 col-xs-6">
-            <h1>Peinte Sudog</h1>
+        <div class="col-md-6 col-xs-6 d-inline-flex justify-content-center">
+            <h1>Peinture Sudog</h1>
         </div>
         <div class="col-md-3 col-xs-3"></div>
     </div>

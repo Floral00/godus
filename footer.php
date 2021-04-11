@@ -1,2 +1,2 @@
 <!-- Pied de page -->
-
+<!-- Footer -->
